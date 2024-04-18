@@ -15,6 +15,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 // Dispatcher einrichten
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/', 'App\Controller\HomeController::index');
+    $r->addRoute('GET', '/jobangebote', 'App\Controller\JobangeboteController::index');
 });
 
 // HTTP-Methode und URI abrufen
