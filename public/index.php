@@ -40,6 +40,7 @@ switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
-        // ... call $handler with $vars
+        list($class, $method) = explode('::', $handler, 2);
+        call_user_func_array([new $class, $method], $vars);
         break;
 }
