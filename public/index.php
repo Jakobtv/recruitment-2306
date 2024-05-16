@@ -16,6 +16,15 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/', 'App\Controller\HomeController::index');
     $r->addRoute('GET', '/jobangebote', 'App\Controller\JobangeboteController::index');
+    $r->addRoute('GET', '/bewerbungen', 'App\Controller\BewerbungenController::index');
+
+    $r->addRoute('GET', '/jobangebote/edit', 'App\Controller\JobangeboteController::edit');
+    $r->addRoute('GET', '/jobangebote/show', 'App\Controller\JobangeboteController::show');
+    $r->addRoute('GET', '/jobangebote/update', 'App\Controller\JobangeboteController::update');
+
+    $r->addRoute('GET', '/bewerbungen/edit', 'App\Controller\BewerbungenController::edit');
+    $r->addRoute('GET', '/bewerbungen/show', 'App\Controller\BewerbungenController::show');
+    $r->addRoute('GET', '/bewerbungen/update', 'App\Controller\BewerbungenController::update');
 });
 
 // HTTP-Methode und URI abrufen
